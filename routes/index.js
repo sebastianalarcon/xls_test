@@ -116,6 +116,33 @@ router.get('/xls_users', function(req, res) {
 
 
 router.get('/xls', function(req, res) {
+	
+	parseXlsx(__dirname + '/asesores3.xlsx', function(err, data) {
+  		if(err) throw err;
+    	// data is an array of arrays
+    	console.log(data.length);
+
+		// Autogrande: 5469cf67cde5780e1332cce7
+		// Autoniza: 5469cf67cde5780e1332cce8
+		// Centrodiesel: 5469cf67cde5780e1332cce9
+		// Internacional: 5469cf67cde5780e1332ccea
+
+    	data.forEach(function(entry) {
+			var vendedor = new Vendedor({
+			 	name: entry[0],
+			 	cedula: entry[1],
+			 	celular: entry[1],
+			 	concesionario: '5469cf67cde5780e1332cce7',
+			 	concesionario_name: 'Autogrande',
+			 	asistio: false,
+			 	disponible: false
+			 	}).save(function(err,obj){
+			 		if (err) return console.error(err);
+				});
+			});
+    		
+		});
+
 	// var vendedor = new Vendedor({
 	// 	name: 'James Rodriguez',
 	// 	cedula: '111111',
@@ -128,7 +155,6 @@ router.get('/xls', function(req, res) {
 	// 	if (err) return console.error(err);
 	// });
 	/*Create Concesionarios*/
-	
 	/*
 	var concesionario = new Concesionario({
 	 	name: 'Autogrande',
@@ -138,7 +164,7 @@ router.get('/xls', function(req, res) {
 	}).save(function(err,obj){
 	 	if (err) return console.error(err);
 	});
-	
+
 	var concesionario = new Concesionario({
 		name: 'Autoniza',
 	 	username: 'autoniza',
@@ -163,6 +189,7 @@ router.get('/xls', function(req, res) {
 	 	if (err) return console.error(err);
 	});
 	*/
+
 	  /*
 	  var dashboard = new Dashboard({
     	day: "obtenerFechaString()",
@@ -175,67 +202,6 @@ router.get('/xls', function(req, res) {
 	res.render('index', { title: 'Express' });
 });
 
-
-
-router.get('/xls_sellers', function(req, res) {
-	// var vendedor = new Vendedor({
-	// 	name: 'James Rodriguez',
-	// 	cedula: '111111',
-	// 	celular: '123123123',
-	// 	concesionario: '542c8076aa653d0000759661',
-	// 	concesionario_name: 'Autoniza',
-	// 	asistio: false,
-	// 	disponible: false
-	// }).save(function(err,obj){
-	// 	if (err) return console.error(err);
-	// });
-	/*Create Concesionarios*/
-	
-
-	var concesionario = new Concesionario({
-	 	name: 'Autogrande',
-	 	username: 'autogrande',
-	 	turno : 1,
-	 	atendiendo : true
-	}).save(function(err,obj){
-	 	if (err) return console.error(err);
-	});
-	
-	var concesionario = new Concesionario({
-		name: 'Autoniza',
-	 	username: 'autoniza',
-	 	turno : 2
-	}).save(function(err,obj){
-	 	if (err) return console.error(err);
-	});
-
-	var concesionario = new Concesionario({
-		name: 'Centrodiesel',
-	 	username: 'centrodiesel',
-	 	turno : 3
-	}).save(function(err,obj){
-	 	if (err) return console.error(err);
-	});
-
-	var concesionario = new Concesionario({
-		name: 'Internacional',
-	 	username: 'internacional',
-	 	turno : 4
-	}).save(function(err,obj){
-	 	if (err) return console.error(err);
-	});
-	
-	  /*
-	  var dashboard = new Dashboard({
-    	day: "obtenerFechaString()",
-    	fecha:  Date()
-  		}).save(function (err, obj) {
-    		if (err) return console.error(err);
-      		console.log(obj);
-  		});
-		*/
-	res.render('index', { title: 'Express' });
-});
 
 
 
