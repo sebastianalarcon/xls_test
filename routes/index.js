@@ -117,31 +117,31 @@ router.get('/xls_users', function(req, res) {
 
 router.get('/xls', function(req, res) {
 	
-	parseXlsx(__dirname + '/internacional.xlsx', function(err, data) {
-  		if(err) throw err;
-    	// data is an array of arrays
-    	console.log(data.length);
+	// parseXlsx(__dirname + '/internacional.xlsx', function(err, data) {
+ //  		if(err) throw err;
+ //    	// data is an array of arrays
+ //    	console.log(data.length);
 
-		// Autogrande: 5469cf67cde5780e1332cce7 DONE
-		// Autoniza: 5469cf67cde5780e1332cce8 DONE
-		// Centrodiesel: 5469cf67cde5780e1332cce9 DONE
-		// Internacional: 5469cf67cde5780e1332ccea
+	// 	// Autogrande: 5469cf67cde5780e1332cce7 DONE
+	// 	// Autoniza: 5469cf67cde5780e1332cce8 DONE
+	// 	// Centrodiesel: 5469cf67cde5780e1332cce9 DONE
+	// 	// Internacional: 5469cf67cde5780e1332ccea DONE
 
-    	data.forEach(function(entry) {
-			var vendedor = new Vendedor({
-			 	name: entry[0],
-			 	cedula: entry[1],
-			 	celular: entry[1],
-			 	concesionario: '5469cf67cde5780e1332ccea',
-			 	concesionario_name: 'Internacional',
-			 	asistio: false,
-			 	disponible: false
-			 	}).save(function(err,obj){
-			 		if (err) return console.error(err);
-				});
-			});
+ //    	data.forEach(function(entry) {
+	// 		var vendedor = new Vendedor({
+	// 		 	name: entry[0],
+	// 		 	cedula: entry[1],
+	// 		 	celular: entry[1],
+	// 		 	concesionario: '5469cf67cde5780e1332ccea',
+	// 		 	concesionario_name: 'Internacional',
+	// 		 	asistio: false,
+	// 		 	disponible: false
+	// 		 	}).save(function(err,obj){
+	// 		 		if (err) return console.error(err);
+	// 			});
+	// 		});
     		
-		});
+	// 	});
 
 	// var vendedor = new Vendedor({
 	// 	name: 'James Rodriguez',
