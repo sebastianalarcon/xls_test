@@ -1,0 +1,92 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'update' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose url raw express
+5 verbose url resolving [ 'https://registry.npmjs.org/', './express' ]
+6 verbose url resolved https://registry.npmjs.org/express
+7 info trying registry request attempt 1 at 05:11:34
+8 verbose etag "8GW0MS8WQIWW2WZYIMEBLYB3"
+9 http GET https://registry.npmjs.org/express
+10 verbose url raw body-parser
+11 verbose url resolving [ 'https://registry.npmjs.org/', './body-parser' ]
+12 verbose url resolved https://registry.npmjs.org/body-parser
+13 info trying registry request attempt 1 at 05:11:34
+14 verbose etag "31NOWALYE5KS8CUXXM9FZZM0H"
+15 http GET https://registry.npmjs.org/body-parser
+16 verbose url raw morgan
+17 verbose url resolving [ 'https://registry.npmjs.org/', './morgan' ]
+18 verbose url resolved https://registry.npmjs.org/morgan
+19 info trying registry request attempt 1 at 05:11:34
+20 verbose etag "AZAUPRTBF7IDB5ZNT1PUN8D7T"
+21 http GET https://registry.npmjs.org/morgan
+22 verbose url raw cookie-parser
+23 verbose url resolving [ 'https://registry.npmjs.org/', './cookie-parser' ]
+24 verbose url resolved https://registry.npmjs.org/cookie-parser
+25 info trying registry request attempt 1 at 05:11:34
+26 verbose etag "D2I21Z55J0M83YHA636O1DW9K"
+27 http GET https://registry.npmjs.org/cookie-parser
+28 verbose url raw debug
+29 verbose url resolving [ 'https://registry.npmjs.org/', './debug' ]
+30 verbose url resolved https://registry.npmjs.org/debug
+31 info trying registry request attempt 1 at 05:11:34
+32 verbose etag "23FIH1WB5VEJQZNKENEXK0P67"
+33 http GET https://registry.npmjs.org/debug
+34 verbose registry.get node not expired, no request
+35 verbose cache add [ 'node', '~0.8.2' ]
+36 verbose cache add name="node" spec="~0.8.2" args=["node","~0.8.2"]
+37 verbose parsed url { protocol: null,
+37 verbose parsed url   slashes: null,
+37 verbose parsed url   auth: null,
+37 verbose parsed url   host: null,
+37 verbose parsed url   port: null,
+37 verbose parsed url   hostname: null,
+37 verbose parsed url   hash: null,
+37 verbose parsed url   search: null,
+37 verbose parsed url   query: null,
+37 verbose parsed url   pathname: '~0.8.2',
+37 verbose parsed url   path: '~0.8.2',
+37 verbose parsed url   href: '~0.8.2' }
+38 verbose addNamed [ 'node', '~0.8.2' ]
+39 verbose addNamed [ null, '>=0.8.2-0 <0.9.0-0' ]
+40 verbose url raw serve-favicon
+41 verbose url resolving [ 'https://registry.npmjs.org/', './serve-favicon' ]
+42 verbose url resolved https://registry.npmjs.org/serve-favicon
+43 info trying registry request attempt 1 at 05:11:34
+44 verbose etag "DQNCEOV1TU804V1DNRWACLPFP"
+45 http GET https://registry.npmjs.org/serve-favicon
+46 silly lockFile 23d9d000-node-0-8-2 node@~0.8.2
+47 verbose lock node@~0.8.2 /home/sebas/.npm/23d9d000-node-0-8-2.lock
+48 verbose url raw excel-parser
+49 verbose url resolving [ 'https://registry.npmjs.org/', './excel-parser' ]
+50 verbose url resolved https://registry.npmjs.org/excel-parser
+51 info trying registry request attempt 1 at 05:11:34
+52 verbose etag "BNZ4MH76PKOJQ208F233OLH2J"
+53 http GET https://registry.npmjs.org/excel-parser
+54 verbose url raw jade
+55 verbose url resolving [ 'https://registry.npmjs.org/', './jade' ]
+56 verbose url resolved https://registry.npmjs.org/jade
+57 info trying registry request attempt 1 at 05:11:34
+58 verbose etag "41TCPNER4EPCQTXIY9PAST7V8"
+59 http GET https://registry.npmjs.org/jade
+60 silly addNameRange { name: 'node', range: '>=0.8.2-0 <0.9.0-0', hasData: false }
+61 verbose registry.get node not expired, no request
+62 silly addNameRange number 2 { name: 'node', range: '>=0.8.2-0 <0.9.0-0', hasData: true }
+63 silly addNameRange versions [ 'node', [ '0.0.0' ] ]
+64 silly lockFile 23d9d000-node-0-8-2 node@~0.8.2
+65 silly lockFile 23d9d000-node-0-8-2 node@~0.8.2
+66 info outdated updating undefined
+67 error notarget No compatible version found: node@'>=0.8.2-0 <0.9.0-0'
+67 error notarget Valid install targets:
+67 error notarget ["0.0.0"]
+67 error notarget
+67 error notarget This is most likely not a problem with npm itself.
+67 error notarget In most cases you or one of your dependencies are requesting
+67 error notarget a package version that doesn't exist.
+68 error System Linux 3.13.0-39-generic
+69 error command "/usr/local/bin/node" "/usr/local/bin/npm" "update"
+70 error cwd /home/sebas/Descargas/Trabajo/xls_test
+71 error node -v v0.10.26
+72 error npm -v 1.4.3
+73 error code ETARGET
+74 verbose exit [ 1, true ]
