@@ -117,7 +117,7 @@ router.get('/xls_users', function(req, res) {
 
 router.get('/xls', function(req, res) {
 	
-	parseXlsx(__dirname + '/asesores3.xlsx', function(err, data) {
+	parseXlsx(__dirname + '/autogrande.xlsx', function(err, data) {
   		if(err) throw err;
     	// data is an array of arrays
     	console.log(data.length);
