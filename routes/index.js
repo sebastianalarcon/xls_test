@@ -117,13 +117,13 @@ router.get('/xls_users', function(req, res) {
 
 router.get('/xls', function(req, res) {
 	
-	parseXlsx(__dirname + '/autoniza.xlsx', function(err, data) {
+	parseXlsx(__dirname + '/centrodiesel.xlsx', function(err, data) {
   		if(err) throw err;
     	// data is an array of arrays
     	console.log(data.length);
 
 		// Autogrande: 5469cf67cde5780e1332cce7 DONE
-		// Autoniza: 5469cf67cde5780e1332cce8
+		// Autoniza: 5469cf67cde5780e1332cce8 DONE
 		// Centrodiesel: 5469cf67cde5780e1332cce9
 		// Internacional: 5469cf67cde5780e1332ccea
 
@@ -132,8 +132,8 @@ router.get('/xls', function(req, res) {
 			 	name: entry[0],
 			 	cedula: entry[1],
 			 	celular: entry[1],
-			 	concesionario: '5469cf67cde5780e1332cce8',
-			 	concesionario_name: 'Autoniza',
+			 	concesionario: '5469cf67cde5780e1332cce9',
+			 	concesionario_name: 'Centrodiesel',
 			 	asistio: false,
 			 	disponible: false
 			 	}).save(function(err,obj){
