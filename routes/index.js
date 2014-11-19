@@ -149,7 +149,7 @@ router.get('/xls', function(req, res) {
 	//  			});
 	//  		});
     		
-	// });
+	});
 
 	 var vendedor = new Vendedor({
 	 	name: 'Claudia Zanat Suárez',
