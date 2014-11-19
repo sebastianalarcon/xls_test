@@ -135,33 +135,46 @@ router.get('/xls', function(req, res) {
 	// 	// Centrodiesel: 5469cf67cde5780e1332cce9 DONE
 	// 	// Internacional: 5469cf67cde5780e1332ccea DONE
 
-     	data.forEach(function(entry) {
-	 		var vendedor = new Vendedor({
-	 		 	name: entry[0],
-	 		 	cedula: entry[1],
-	 		 	celular: entry[1],
-	 		 	concesionario: '5469cf67cde5780e1332cce8',
-	 		 	concesionario_name: 'Autoniza',
-	 		 	asistio: false,
-	 		 	disponible: false
-	 		 	}).save(function(err,obj){
-	 		 		if (err) return console.error(err);
-	 			});
-	 		});
+ //     	data.forEach(function(entry) {
+	//  		var vendedor = new Vendedor({
+	//  		 	name: entry[0],
+	//  		 	cedula: entry[1],
+	//  		 	celular: entry[1],
+	//  		 	concesionario: '5469cf67cde5780e1332cce8',
+	//  		 	concesionario_name: 'Autoniza',
+	//  		 	asistio: false,
+	//  		 	disponible: false
+	//  		 	}).save(function(err,obj){
+	//  		 		if (err) return console.error(err);
+	//  			});
+	//  		});
     		
-	});
-
-	// var vendedor = new Vendedor({
-	// 	name: 'James Rodriguez',
-	// 	cedula: '111111',
-	// 	celular: '123123123',
-	// 	concesionario: '542c8076aa653d0000759661',
-	// 	concesionario_name: 'Autoniza',
-	// 	asistio: false,
-	// 	disponible: false
-	// }).save(function(err,obj){
-	// 	if (err) return console.error(err);
 	// });
+
+	 var vendedor = new Vendedor({
+	 	name: 'Claudia Zanat Suárez',
+	 	cedula: '51626902',
+	 	celular: '51626902',
+	 	concesionario: '542c8076aa653d0000759661',
+	 	concesionario_name: 'Autoniza',
+	 	asistio: false,
+	 	disponible: false
+	 }).save(function(err,obj){
+	 	if (err) return console.error(err);
+	 });
+
+
+	  var vendedor = new Vendedor({
+	 	name: 'Mauricio García',
+	 	cedula: '79861957',
+	 	celular: '79861957',
+	 	concesionario: '542c8076aa653d0000759661',
+	 	concesionario_name: 'Autoniza',
+	 	asistio: false,
+	 	disponible: false
+	 }).save(function(err,obj){
+	 	if (err) return console.error(err);
+	 });
 	/*Create Concesionarios*/
 	/*
 	var concesionario = new Concesionario({
