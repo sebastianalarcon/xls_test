@@ -125,8 +125,8 @@ router.get('/xls_users', function(req, res) {
 
 router.get('/xls', function(req, res) {
 	
-	 parseXlsx(__dirname + '/autoniza2.xlsx', function(err, data) {
-   		if(err) throw err;
+	// parseXlsx(__dirname + '/autoniza2.xlsx', function(err, data) {
+   	//	if(err) throw err;
      	// data is an array of arrays
  //    	console.log(data.length);
 
@@ -149,7 +149,7 @@ router.get('/xls', function(req, res) {
 	//  			});
 	//  		});
     		
-	});
+	//});
 
 	 var vendedor = new Vendedor({
 	 	name: 'Claudia Zanat Suárez',
