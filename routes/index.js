@@ -71,8 +71,16 @@ router.get('/exportar', function(req, res) {
 router.get('/cron', function(req, res) {
 	var jobId = crontab.scheduleJob("* * * * *", function(){ //This will call this function every 1 minute
 	    console.log("It's been 1 minute!");
-	    request('http://192.168.1.116/local/people-counter/.api?live-sum.json', function (error, response, body) {
+	    request('http://10.102.0.16/local/people-counter/.api?live-sum.json', function (error, response, body) {
   			if (!error && response.statusCode == 200) {
+  				console.log("Cámara Entrada")
+    			console.log(JSON.parse(body)["in"]) // Print the google web page.
+  			}
+		})
+
+		request('http://10.102.0.17/local/people-counter/.api?live-sum.json', function (error, response, body) {
+  			if (!error && response.statusCode == 200) {
+  				console.log("Cámara Salida") // Print the google web page.
     			console.log(body) // Print the google web page.
   			}
 		})
@@ -117,9 +125,9 @@ router.get('/xls_users', function(req, res) {
 
 router.get('/xls', function(req, res) {
 	
-	// parseXlsx(__dirname + '/internacional.xlsx', function(err, data) {
- //  		if(err) throw err;
- //    	// data is an array of arrays
+	 parseXlsx(__dirname + '/autoniza2.xlsx', function(err, data) {
+   		if(err) throw err;
+     	// data is an array of arrays
  //    	console.log(data.length);
 
 	// 	// Autogrande: 5469cf67cde5780e1332cce7 DONE
@@ -127,19 +135,19 @@ router.get('/xls', function(req, res) {
 	// 	// Centrodiesel: 5469cf67cde5780e1332cce9 DONE
 	// 	// Internacional: 5469cf67cde5780e1332ccea DONE
 
- //    	data.forEach(function(entry) {
-	// 		var vendedor = new Vendedor({
-	// 		 	name: entry[0],
-	// 		 	cedula: entry[1],
-	// 		 	celular: entry[1],
-	// 		 	concesionario: '5469cf67cde5780e1332ccea',
-	// 		 	concesionario_name: 'Internacional',
-	// 		 	asistio: false,
-	// 		 	disponible: false
-	// 		 	}).save(function(err,obj){
-	// 		 		if (err) return console.error(err);
-	// 			});
-	// 		});
+     	data.forEach(function(entry) {
+	 		var vendedor = new Vendedor({
+	 		 	name: entry[0],
+	 		 	cedula: entry[1],
+	 		 	celular: entry[1],
+	 		 	concesionario: '5469cf67cde5780e1332cce8',
+	 		 	concesionario_name: 'Autoniza',
+	 		 	asistio: false,
+	 		 	disponible: false
+	 		 	}).save(function(err,obj){
+	 		 		if (err) return console.error(err);
+	 			});
+	 		});
     		
 	// 	});
 
