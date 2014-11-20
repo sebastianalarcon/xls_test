@@ -124,17 +124,17 @@ router.get('/xls_users', function(req, res) {
 
 
 router.get('/xls', function(req, res) {
-	// Autogrande: 5469cf67cde5780e1332cce7 DONE
-	// Autoniza: 5469cf67cde5780e1332cce8 DONE
-	// Centrodiesel: 5469cf67cde5780e1332cce9 DONE
-	// Internacional: 5469cf67cde5780e1332ccea DONE
+	// Autogrande: 5469cf67cde5780e1332cce7
+	// Autoniza: 5469cf67cde5780e1332cce8
+	// Centrodiesel: 5469cf67cde5780e1332cce9
+	// Internacional: 5469cf67cde5780e1332ccea
 	// Sant Jorge: 546dfa1c7c5bc7f7298a99e0
 
 
 	/* Script ṕara la creación de múltiples usuarios de un concesionario*/
 
 	
-	parseXlsx(__dirname + '/sanjorge.xlsx', function(err, data) {
+	parseXlsx(__dirname + '/sanjorge2.xlsx', function(err, data) {
 		if(err) throw err;
 		console.log(data.length);
 		data.forEach(function(entry){
@@ -152,6 +152,23 @@ router.get('/xls', function(req, res) {
 		});
 	});
 	
+	parseXlsx(__dirname + '/autoniza3.xlsx', function(err, data) {
+		if(err) throw err;
+		console.log(data.length);
+		data.forEach(function(entry){
+			var vendedor = new Vendedor({
+				name: entry[0],
+				cedula: entry[1],
+				celular: entry[1],
+				concesionario: '5469cf67cde5780e1332cce7',
+				concesionario_name: 'Autoniza',
+				asistio: false,
+				disponible: false
+			}).save(function(err,obj){
+				if (err) return console.error(err);
+			});
+		});
+	});
 
 	/* Script para crear un solo vendedor */
 
