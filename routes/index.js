@@ -157,9 +157,57 @@ router.get('/xls', function(req, res) {
 
 	
 	var vendedor = new Vendedor({
-		name: 'Paola Perilla',
-		cedula: '52870266',
-		celular: '52870266',
+		name: 'Martha Ramírez',
+		cedula: '41724883',
+		celular: '41724883',
+		concesionario: '5469cf67cde5780e1332cce7',
+		concesionario_name: 'Autogrande',
+		asistio: false,
+		disponible: false
+	}).save(function(err,obj){
+		if (err) return console.error(err);
+	});
+
+	var vendedor = new Vendedor({
+		name: 'Jairo Riaño',
+		cedula: '19163918',
+		celular: '19163918',
+		concesionario: '5469cf67cde5780e1332cce7',
+		concesionario_name: 'Autogrande',
+		asistio: false,
+		disponible: false
+	}).save(function(err,obj){
+		if (err) return console.error(err);
+	});
+
+	var vendedor = new Vendedor({
+		name: 'Andrés Cortés',
+		cedula: '1022323229',
+		celular: '1022323229',
+		concesionario: '5469cf67cde5780e1332cce7',
+		concesionario_name: 'Autogrande',
+		asistio: false,
+		disponible: false
+	}).save(function(err,obj){
+		if (err) return console.error(err);
+	});
+
+	var vendedor = new Vendedor({
+		name: 'Ferney Acosta',
+		cedula: '79759789',
+		celular: '79759789',
+		concesionario: '5469cf67cde5780e1332cce7',
+		concesionario_name: 'Autogrande',
+		asistio: false,
+		disponible: false
+	}).save(function(err,obj){
+		if (err) return console.error(err);
+	});
+
+	var vendedor = new Vendedor({
+		name: 'Alexander Puentes',
+		cedula: '1024508647',
+		celular: '1024508647',
 		concesionario: '5469cf67cde5780e1332cce7',
 		concesionario_name: 'Autogrande',
 		asistio: false,
