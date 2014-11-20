@@ -157,33 +157,9 @@ router.get('/xls', function(req, res) {
 
 	
 	var vendedor = new Vendedor({
-		name: 'Susana González',
-		cedula: '1024505767',
-		celular: '1024505767',
-		concesionario: '546dfa1c7c5bc7f7298a99e0',
-		concesionario_name: 'San Jorge',
-		asistio: false,
-		disponible: false
-	}).save(function(err,obj){
-		if (err) return console.error(err);
-	});
-	
-	var vendedor = new Vendedor({
 		name: 'Cindy Beltrán',
-		cedula: '52714745',
-		celular: '52714745',
-		concesionario: '546dfa1c7c5bc7f7298a99e0',
-		concesionario_name: 'San Jorge',
-		asistio: false,
-		disponible: false
-	}).save(function(err,obj){
-		if (err) return console.error(err);
-	});
-
-	var vendedor = new Vendedor({
-		name: 'Durley',
-		cedula: '52714745',
-		celular: '52714745',
+		cedula: '1014233021',
+		celular: '1014233021',
 		concesionario: '546dfa1c7c5bc7f7298a99e0',
 		concesionario_name: 'San Jorge',
 		asistio: false,
