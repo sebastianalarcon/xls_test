@@ -17,54 +17,54 @@ router.get('/', function(req, res) {
 /*    SCRIPT PARA EXPORTAR DATOS  CONF.COLS ES UN ARRAY QUE RECIBE LOS TÍTULOS DE LAS COLUMNAS CONF.ROWS ES EL CONTENIDO DE CADA COLUMNA, ACÁ SE DEBE HACER UN FOR QUE LEA CADA REGISTRO DE LA BASE DE DATOS  */
 router.get('/exportar', function(req, res) {
 	
-      var conf ={};
-	    conf.stylesXmlFile = __dirname +"/styles.xml";
-	      conf.cols = [{
-	        caption:'string',
-	        type:'string',
-	        beforeCellWrite:function(row, cellData){
-	             return cellData.toUpperCase();
-	        },
-	        width:28.7109375
-	    },{
-	        caption:'date',
-	        type:'date',
-	        beforeCellWrite:function(){
-	            var originDate = new Date(Date.UTC(1899,11,30));
-	            return function(row, cellData, eOpt){
-	                  if (eOpt.rowNum%2){
-	                    eOpt.styleIndex = 1;
-	                  }  
-	                  else{
-	                    eOpt.styleIndex = 2;
-	                  }
-	                if (cellData === null){
-	                  eOpt.cellType = 'string';
-	                  return 'N/A';
-	                } else
-	                  return (cellData - originDate) / (24 * 60 * 60 * 1000);
+	var conf ={};
+	conf.stylesXmlFile = __dirname +"/styles.xml";
+	conf.cols = [{
+		caption:'string',
+		type:'string',
+		beforeCellWrite:function(row, cellData){
+			return cellData.toUpperCase();
+		},
+			width:28.7109375
+		},
+		{
+			caption:'date',
+			type:'date',
+			beforeCellWrite:function(){
+				var originDate = new Date(Date.UTC(1899,11,30));
+				return function(row, cellData, eOpt){
+				if (eOpt.rowNum%2){
+					eOpt.styleIndex = 1;
+				}  
+				else{
+					eOpt.styleIndex = 2;
+				}
+				if (cellData === null){
+					eOpt.cellType = 'string';
+					return 'N/A';
+				}
+				else
+					return (cellData - originDate) / (24 * 60 * 60 * 1000);
 	            } 
 	        }()
 	    },{
-	        caption:'bool',
-	        type:'bool'
-	    },{
-	        caption:'number',
-	         type:'number'                
-	      }];
-	      conf.rows = [
-	         ['pi', new Date(Date.UTC(2013, 4, 1)), true, 3.14],
-	         ["e", new Date(2012, 4, 1), false, 2.7182],
-	        ["M&M<>'", new Date(Date.UTC(2013, 6, 9)), false, 1.61803],
-	        ["null date", null, true, 1.414]  
-	      ];
-	      var result = nodeExcel.execute(conf);
-	      res.setHeader('Content-Type', 'application/vnd.openxmlformats');
-	      res.setHeader("Content-Disposition", "attachment; filename=" + "Report.xlsx");
-	      res.end(result, 'binary');
-
-
-	
+			caption:'bool',
+			type:'bool'
+		},{
+			caption:'number',
+			type:'number'                
+		}];
+		
+	conf.rows = [
+		['pi', new Date(Date.UTC(2013, 4, 1)), true, 3.14],
+		["e", new Date(2012, 4, 1), false, 2.7182],
+		["M&M<>'", new Date(Date.UTC(2013, 6, 9)), false, 1.61803],
+		["null date", null, true, 1.414]
+	];
+	var result = nodeExcel.execute(conf);
+	res.setHeader('Content-Type', 'application/vnd.openxmlformats');
+	res.setHeader("Content-Disposition", "attachment; filename=" + "Report.xlsx");
+	res.end(result, 'binary');
 });
 
 /*      LOS CRONJOBS TIENEN GRANULARIDAD DE MINUTOS, POR LO CUAL NO SE PUEDEN HACER EN TIEMPO MENOR A UN MINUTO. LA RESPUESTA (BODY) ES EL ARREGLO QUE DEVUELVE EL API DE LA CÁMARA      */
@@ -124,102 +124,96 @@ router.get('/xls_users', function(req, res) {
 
 
 router.get('/xls', function(req, res) {
+	// Autogrande: 5469cf67cde5780e1332cce7 DONE
+	// Autoniza: 5469cf67cde5780e1332cce8 DONE
+	// Centrodiesel: 5469cf67cde5780e1332cce9 DONE
+	// Internacional: 5469cf67cde5780e1332ccea DONE
+	// Sant Jorge: 
+
+
+	/* Script ṕara la creación de múltiples usuarios de un concesionario*/
+
+	/*
+	parseXlsx(__dirname + '/sanjorge.xlsx', function(err, data) {
+		if(err) throw err;
+		console.log(data.length);
+		data.forEach(function(entry){
+			var vendedor = new Vendedor({
+				name: entry[0],
+				cedula: entry[1],
+				celular: entry[1],
+				concesionario: '',
+				concesionario_name: 'San Jorge',
+				asistio: false,
+				disponible: false
+			}).save(function(err,obj){
+				if (err) return console.error(err);
+			});
+		});
+	});
+	*/
+
+	/* Script para crear un solo vendedor */
+
+	/*
+	var vendedor = new Vendedor({
+		name: 'Claudia Zanat Suárez',
+		cedula: '51626902',
+		celular: '51626902',
+		concesionario: '5469cf67cde5780e1332cce8',
+		concesionario_name: 'Autoniza',
+		asistio: false,
+		disponible: false
+	}).save(function(err,obj){
+		if (err) return console.error(err);
+	});
+	*/
 	
-	// parseXlsx(__dirname + '/autoniza2.xlsx', function(err, data) {
-   	//	if(err) throw err;
-     	// data is an array of arrays
- //    	console.log(data.length);
-
-	// 	// Autogrande: 5469cf67cde5780e1332cce7 DONE
-	// 	// Autoniza: 5469cf67cde5780e1332cce8 DONE
-	// 	// Centrodiesel: 5469cf67cde5780e1332cce9 DONE
-	// 	// Internacional: 5469cf67cde5780e1332ccea DONE
-
- //     	data.forEach(function(entry) {
-	//  		var vendedor = new Vendedor({
-	//  		 	name: entry[0],
-	//  		 	cedula: entry[1],
-	//  		 	celular: entry[1],
-	//  		 	concesionario: '5469cf67cde5780e1332cce8',
-	//  		 	concesionario_name: 'Autoniza',
-	//  		 	asistio: false,
-	//  		 	disponible: false
-	//  		 	}).save(function(err,obj){
-	//  		 		if (err) return console.error(err);
-	//  			});
-	//  		});
-    		
-	//});
-
-	 var vendedor = new Vendedor({
-	 	name: 'Claudia Zanat Suárez',
-	 	cedula: '51626902',
-	 	celular: '51626902',
-	 	concesionario: '5469cf67cde5780e1332cce8',
-	 	concesionario_name: 'Autoniza',
-	 	asistio: false,
-	 	disponible: false
-	 }).save(function(err,obj){
-	 	if (err) return console.error(err);
-	 });
-
-
-	  var vendedor = new Vendedor({
-	 	name: 'Mauricio García',
-	 	cedula: '79861957',
-	 	celular: '79861957',
-	 	concesionario: '5469cf67cde5780e1332cce8',
-	 	concesionario_name: 'Autoniza',
-	 	asistio: false,
-	 	disponible: false
-	 }).save(function(err,obj){
-	 	if (err) return console.error(err);
-	 });
 	/*Create Concesionarios*/
+	
 	/*
 	var concesionario = new Concesionario({
-	 	name: 'Autogrande',
-	 	username: 'autogrande',
-	 	turno : 1,
-	 	atendiendo : true
+		name: 'Autogrande',
+		username: 'autogrande',
+		turno : 1,
+		atendiendo : true
 	}).save(function(err,obj){
-	 	if (err) return console.error(err);
+		if (err) return console.error(err);
 	});
 
 	var concesionario = new Concesionario({
 		name: 'Autoniza',
-	 	username: 'autoniza',
-	 	turno : 2
+		username: 'autoniza',
+		turno : 2
 	}).save(function(err,obj){
-	 	if (err) return console.error(err);
+		if (err) return console.error(err);
 	});
 
 	var concesionario = new Concesionario({
 		name: 'Centrodiesel',
-	 	username: 'centrodiesel',
-	 	turno : 3
+		username: 'centrodiesel',
+		turno : 3
 	}).save(function(err,obj){
-	 	if (err) return console.error(err);
+		if (err) return console.error(err);
 	});
 
 	var concesionario = new Concesionario({
 		name: 'Internacional',
-	 	username: 'internacional',
-	 	turno : 4
+		username: 'internacional',
+		turno : 4
 	}).save(function(err,obj){
-	 	if (err) return console.error(err);
+		if (err) return console.error(err);
 	});
 	*/
 
-	  /*
-	  var dashboard = new Dashboard({
-    	day: "obtenerFechaString()",
-    	fecha:  Date()
-  		}).save(function (err, obj) {
-    		if (err) return console.error(err);
-      		console.log(obj);
-  		});
-		*/
+	var concesionario = new Concesionario({
+		name: 'San Jorge',
+		username: 'San Jorge',
+		turno : 5
+	}).save(function(err,obj){
+		if (err) return console.error(err);
+	});
+	
 	res.render('index', { title: 'Express' });
 });
 
