@@ -157,11 +157,11 @@ router.get('/xls', function(req, res) {
 
 	
 	var vendedor = new Vendedor({
-		name: 'Edwin Galindo',
-		cedula: '80864046',
-		celular: '80864046',
-		concesionario: '5469cf67cde5780e1332ccea',
-		concesionario_name: 'Internacional',
+		name: 'Susana González',
+		cedula: '1024505767',
+		celular: '1024505767',
+		concesionario: '546dfa1c7c5bc7f7298a99e0',
+		concesionario_name: 'San Jorge',
 		asistio: false,
 		disponible: false
 	}).save(function(err,obj){
@@ -169,11 +169,11 @@ router.get('/xls', function(req, res) {
 	});
 	
 	var vendedor = new Vendedor({
-		name: 'Cristian Duarte',
-		cedula: '1023504305',
-		celular: '1023504305',
-		concesionario: '5469cf67cde5780e1332ccea',
-		concesionario_name: 'Internacional',
+		name: 'Cindy Beltrán',
+		cedula: '52714745',
+		celular: '52714745',
+		concesionario: '546dfa1c7c5bc7f7298a99e0',
+		concesionario_name: 'San Jorge',
 		asistio: false,
 		disponible: false
 	}).save(function(err,obj){
@@ -181,41 +181,17 @@ router.get('/xls', function(req, res) {
 	});
 
 	var vendedor = new Vendedor({
-		name: 'Jeison López',
-		cedula: '1022353453',
-		celular: '1022353453',
-		concesionario: '5469cf67cde5780e1332ccea',
-		concesionario_name: 'Internacional',
+		name: 'Durley',
+		cedula: '52714745',
+		celular: '52714745',
+		concesionario: '546dfa1c7c5bc7f7298a99e0',
+		concesionario_name: 'San Jorge',
 		asistio: false,
 		disponible: false
 	}).save(function(err,obj){
 		if (err) return console.error(err);
 	});
 
-	var vendedor = new Vendedor({
-		name: 'Jhon Cruz Guerero',
-		cedula: '80209022',
-		celular: '80209022',
-		concesionario: '5469cf67cde5780e1332ccea',
-		concesionario_name: 'Internacional',
-		asistio: false,
-		disponible: false
-	}).save(function(err,obj){
-		if (err) return console.error(err);
-	});
-
-	var vendedor = new Vendedor({
-		name: 'Edison Bolaños',
-		cedula: '79973791',
-		celular: '79973791',
-		concesionario: '5469cf67cde5780e1332ccea',
-		concesionario_name: 'Internacional',
-		asistio: false,
-		disponible: false
-	}).save(function(err,obj){
-		if (err) return console.error(err);
-	});
-	
 	/*Create Concesionarios*/
 	
 	/*
