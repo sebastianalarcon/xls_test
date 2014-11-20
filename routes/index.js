@@ -133,7 +133,7 @@ router.get('/xls', function(req, res) {
 
 	/* Script ṕara la creación de múltiples usuarios de un concesionario*/
 
-	
+	/*
 	parseXlsx(__dirname + '/sanjorge2.xlsx', function(err, data) {
 		if(err) throw err;
 		console.log(data.length);
@@ -151,40 +151,70 @@ router.get('/xls', function(req, res) {
 			});
 		});
 	});
-	
-	parseXlsx(__dirname + '/autoniza3.xlsx', function(err, data) {
-		if(err) throw err;
-		console.log(data.length);
-		data.forEach(function(entry){
-			var vendedor = new Vendedor({
-				name: entry[0],
-				cedula: entry[1],
-				celular: entry[1],
-				concesionario: '5469cf67cde5780e1332cce7',
-				concesionario_name: 'Autoniza',
-				asistio: false,
-				disponible: false
-			}).save(function(err,obj){
-				if (err) return console.error(err);
-			});
-		});
-	});
+	*/
 
 	/* Script para crear un solo vendedor */
 
-	/*
+	
 	var vendedor = new Vendedor({
-		name: 'Claudia Zanat Suárez',
-		cedula: '51626902',
-		celular: '51626902',
-		concesionario: '5469cf67cde5780e1332cce8',
-		concesionario_name: 'Autoniza',
+		name: 'Edwin Galindo',
+		cedula: '80864046',
+		celular: '80864046',
+		concesionario: '5469cf67cde5780e1332ccea',
+		concesionario_name: 'Internacional',
 		asistio: false,
 		disponible: false
 	}).save(function(err,obj){
 		if (err) return console.error(err);
 	});
-	*/
+	
+	var vendedor = new Vendedor({
+		name: 'Cristian Duarte',
+		cedula: '1023504305',
+		celular: '1023504305',
+		concesionario: '5469cf67cde5780e1332ccea',
+		concesionario_name: 'Internacional',
+		asistio: false,
+		disponible: false
+	}).save(function(err,obj){
+		if (err) return console.error(err);
+	});
+
+	var vendedor = new Vendedor({
+		name: 'Jeison López',
+		cedula: '1022353453',
+		celular: '1022353453',
+		concesionario: '5469cf67cde5780e1332ccea',
+		concesionario_name: 'Internacional',
+		asistio: false,
+		disponible: false
+	}).save(function(err,obj){
+		if (err) return console.error(err);
+	});
+
+	var vendedor = new Vendedor({
+		name: 'Jhon Cruz Guerero',
+		cedula: '80209022',
+		celular: '80209022',
+		concesionario: '5469cf67cde5780e1332ccea',
+		concesionario_name: 'Internacional',
+		asistio: false,
+		disponible: false
+	}).save(function(err,obj){
+		if (err) return console.error(err);
+	});
+
+	var vendedor = new Vendedor({
+		name: 'Edison Bolaños',
+		cedula: '79973791',
+		celular: '79973791',
+		concesionario: '5469cf67cde5780e1332ccea',
+		concesionario_name: 'Internacional',
+		asistio: false,
+		disponible: false
+	}).save(function(err,obj){
+		if (err) return console.error(err);
+	});
 	
 	/*Create Concesionarios*/
 	
