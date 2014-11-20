@@ -128,12 +128,12 @@ router.get('/xls', function(req, res) {
 	// Autoniza: 5469cf67cde5780e1332cce8 DONE
 	// Centrodiesel: 5469cf67cde5780e1332cce9 DONE
 	// Internacional: 5469cf67cde5780e1332ccea DONE
-	// Sant Jorge: 
+	// Sant Jorge: 546dfa1c7c5bc7f7298a99e0
 
 
 	/* Script ṕara la creación de múltiples usuarios de un concesionario*/
 
-	/*
+	
 	parseXlsx(__dirname + '/sanjorge.xlsx', function(err, data) {
 		if(err) throw err;
 		console.log(data.length);
@@ -142,7 +142,7 @@ router.get('/xls', function(req, res) {
 				name: entry[0],
 				cedula: entry[1],
 				celular: entry[1],
-				concesionario: '',
+				concesionario: '546dfa1c7c5bc7f7298a99e0',
 				concesionario_name: 'San Jorge',
 				asistio: false,
 				disponible: false
@@ -151,7 +151,7 @@ router.get('/xls', function(req, res) {
 			});
 		});
 	});
-	*/
+	
 
 	/* Script para crear un solo vendedor */
 
@@ -204,7 +204,7 @@ router.get('/xls', function(req, res) {
 	}).save(function(err,obj){
 		if (err) return console.error(err);
 	});
-	*/
+	
 
 	var concesionario = new Concesionario({
 		name: 'San Jorge',
@@ -213,7 +213,7 @@ router.get('/xls', function(req, res) {
 	}).save(function(err,obj){
 		if (err) return console.error(err);
 	});
-	
+	*/
 	res.render('index', { title: 'Express' });
 });
 
