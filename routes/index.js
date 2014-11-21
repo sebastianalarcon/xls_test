@@ -133,8 +133,8 @@ router.get('/xls', function(req, res) {
 
 	/* Script ṕara la creación de múltiples usuarios de un concesionario*/
 
-	/*
-	parseXlsx(__dirname + '/sanjorge2.xlsx', function(err, data) {
+	
+	parseXlsx(__dirname + '/autoniza4.xlsx', function(err, data) {
 		if(err) throw err;
 		console.log(data.length);
 		data.forEach(function(entry){
@@ -142,8 +142,8 @@ router.get('/xls', function(req, res) {
 				name: entry[0],
 				cedula: entry[1],
 				celular: entry[1],
-				concesionario: '546dfa1c7c5bc7f7298a99e0',
-				concesionario_name: 'San Jorge',
+				concesionario: '5469cf67cde5780e1332cce8',
+				concesionario_name: 'Autoniza',
 				asistio: false,
 				disponible: false
 			}).save(function(err,obj){
@@ -151,11 +151,29 @@ router.get('/xls', function(req, res) {
 			});
 		});
 	});
-	*/
+	
+
+	parseXlsx(__dirname + '/internacional2.xlsx', function(err, data) {
+		if(err) throw err;
+		console.log(data.length);
+		data.forEach(function(entry){
+			var vendedor = new Vendedor({
+				name: entry[0],
+				cedula: entry[1],
+				celular: entry[1],
+				concesionario: '5469cf67cde5780e1332ccea',
+				concesionario_name: 'Internacional',
+				asistio: false,
+				disponible: false
+			}).save(function(err,obj){
+				if (err) return console.error(err);
+			});
+		});
+	});
 
 	/* Script para crear un solo vendedor */
 
-	
+	/*
 	var vendedor = new Vendedor({
 		name: 'Martha Ramírez',
 		cedula: '41724883',
@@ -168,53 +186,7 @@ router.get('/xls', function(req, res) {
 		if (err) return console.error(err);
 	});
 
-	var vendedor = new Vendedor({
-		name: 'Jairo Riaño',
-		cedula: '19163918',
-		celular: '19163918',
-		concesionario: '5469cf67cde5780e1332cce7',
-		concesionario_name: 'Autogrande',
-		asistio: false,
-		disponible: false
-	}).save(function(err,obj){
-		if (err) return console.error(err);
-	});
-
-	var vendedor = new Vendedor({
-		name: 'Andrés Cortés',
-		cedula: '1022323229',
-		celular: '1022323229',
-		concesionario: '5469cf67cde5780e1332cce7',
-		concesionario_name: 'Autogrande',
-		asistio: false,
-		disponible: false
-	}).save(function(err,obj){
-		if (err) return console.error(err);
-	});
-
-	var vendedor = new Vendedor({
-		name: 'Ferney Acosta',
-		cedula: '79759789',
-		celular: '79759789',
-		concesionario: '5469cf67cde5780e1332cce7',
-		concesionario_name: 'Autogrande',
-		asistio: false,
-		disponible: false
-	}).save(function(err,obj){
-		if (err) return console.error(err);
-	});
-
-	var vendedor = new Vendedor({
-		name: 'Alexander Puentes',
-		cedula: '1024508647',
-		celular: '1024508647',
-		concesionario: '5469cf67cde5780e1332cce7',
-		concesionario_name: 'Autogrande',
-		asistio: false,
-		disponible: false
-	}).save(function(err,obj){
-		if (err) return console.error(err);
-	});
+	*/
 
 	/*Create Concesionarios*/
 	
