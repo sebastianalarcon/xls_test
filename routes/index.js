@@ -124,10 +124,10 @@ router.get('/xls_users', function(req, res) {
 
 
 router.get('/xls', function(req, res) {
-	// Autogrande: 5469cf67cde5780e1332cce7 DONE
-	// Autoniza: 5469cf67cde5780e1332cce8 DONE
-	// Centrodiesel: 5469cf67cde5780e1332cce9 DONE
-	// Internacional: 5469cf67cde5780e1332ccea DONE
+	// Autogrande: 5469cf67cde5780e1332cce7
+	// Autoniza: 5469cf67cde5780e1332cce8
+	// Centrodiesel: 5469cf67cde5780e1332cce9
+	// Internacional: 5469cf67cde5780e1332ccea
 	// Sant Jorge: 546dfa1c7c5bc7f7298a99e0
 	// Continautos: 5476550f9a7ea4ec1943ef6d
 
@@ -153,23 +153,23 @@ router.get('/xls', function(req, res) {
 		});
 	});
 	
-
 	/* Script para crear un solo vendedor */
 
 	/*
 	var vendedor = new Vendedor({
-		name: 'Claudia Zanat Suárez',
-		cedula: '51626902',
-		celular: '51626902',
-		concesionario: '5469cf67cde5780e1332cce8',
-		concesionario_name: 'Autoniza',
+		name: 'Martha Ramírez',
+		cedula: '41724883',
+		celular: '41724883',
+		concesionario: '5469cf67cde5780e1332cce7',
+		concesionario_name: 'Autogrande',
 		asistio: false,
 		disponible: false
 	}).save(function(err,obj){
 		if (err) return console.error(err);
 	});
+
 	*/
-	
+
 	/*Create Concesionarios*/
 	
 	/*
