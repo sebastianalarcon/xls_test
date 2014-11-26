@@ -129,12 +129,13 @@ router.get('/xls', function(req, res) {
 	// Centrodiesel: 5469cf67cde5780e1332cce9 DONE
 	// Internacional: 5469cf67cde5780e1332ccea DONE
 	// Sant Jorge: 546dfa1c7c5bc7f7298a99e0
+	// Continautos: 5476550f9a7ea4ec1943ef6d
 
 
 	/* Script ṕara la creación de múltiples usuarios de un concesionario*/
 
 	
-	parseXlsx(__dirname + '/sanjorge.xlsx', function(err, data) {
+	parseXlsx(__dirname + '/continautos.xlsx', function(err, data) {
 		if(err) throw err;
 		console.log(data.length);
 		data.forEach(function(entry){
@@ -142,8 +143,8 @@ router.get('/xls', function(req, res) {
 				name: entry[0],
 				cedula: entry[1],
 				celular: entry[1],
-				concesionario: '546dfa1c7c5bc7f7298a99e0',
-				concesionario_name: 'San Jorge',
+				concesionario: '5476550f9a7ea4ec1943ef6d',
+				concesionario_name: 'Continautos',
 				asistio: false,
 				disponible: false
 			}).save(function(err,obj){
